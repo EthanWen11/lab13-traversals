@@ -176,7 +176,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			postOrderRecurse(node.leftChild);
 			postOrderRecurse(node.rightChild);
 		}
-		System.out.println(node.data + " ");
+		System.out.print(node.data + " ");
 		return;
 	}
 	
