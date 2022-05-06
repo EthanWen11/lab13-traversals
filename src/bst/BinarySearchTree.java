@@ -2,6 +2,8 @@ package bst;
 
 import java.util.Stack;
 
+import org.w3c.dom.Node;
+
 public class BinarySearchTree<T extends Comparable<T>> {
 	
 	private static class BSTNode<T extends Comparable<T>>{
@@ -134,7 +136,22 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	//Print the current node first and then recurse on the children
 	public void preOrderStack() {
 		Stack<BSTNode<T>> pre = new Stack<BSTNode<T>>();
+		BSTNode<T> current = root;
+		pre.push(root);
 		
+		while (!pre.isEmpty())
+		{
+			BSTNode<T> toPrint = pre.peek();
+			System.out.print(toPrint.data + " ");
+			pre.pop();
+			if (toPrint.rightChild != null) {
+				pre.push(toPrint.rightChild);
+				
+			}
+			if (toPrint.leftChild != null) {
+				pre.push(toPrint.leftChild);
+			}
+		}
 	}
 		
 
